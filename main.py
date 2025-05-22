@@ -1,6 +1,6 @@
 import pygame
 from constants import *
-from player import Player
+from player import *
 
 def main():
     pygame.init()
@@ -20,8 +20,8 @@ def main():
         clock.tick(60)
         dt = clock.tick(60) / 1000
         
-        # Giving color to our GUI
         screen.fill("black")
+        player.update(dt)
         player.draw(screen)
         pygame.display.flip()
         
