@@ -1,0 +1,15 @@
+from circleshape import CircleShape
+from constants import *
+import pygame
+
+class Shot(CircleShape):
+    def __init__(self, x, y, radius):
+        super().__init__(x, y, radius)
+
+    def draw(self, screen):
+        # sub-classes must override
+        pygame.draw.circle(screen, "white", self.position, SHOT_RADIUS, 2)
+
+    def update(self, dt):
+        # sub-classes must override
+        self.position += (self.velocity * dt) 
